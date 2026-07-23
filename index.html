@@ -49,9 +49,9 @@ h2{font-size:24px;font-weight:800;text-align:center;letter-spacing:.16em;line-he
 .hero .moon{position:absolute;top:7%;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#f7f4ea,#d4cebd 55%,#8f8a7a 96%);box-shadow:0 0 120px 20px rgba(240,236,224,.12);animation:moonfloat 9s ease-in-out infinite}
 @keyframes moonfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero .ring{position:absolute;top:calc(7% - 18px);right:-58px;width:256px;height:256px;border:1px solid rgba(201,167,106,.35);border-radius:50%}
-.hero .vtitle{position:absolute;left:26px;top:9%;z-index:2;writing-mode:vertical-rl;display:flex;gap:20px;align-items:flex-start}
-.hero .vtitle .main{font-size:42px;font-weight:800;letter-spacing:.2em;line-height:1;white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5)}
-.hero .vtitle .sub{font-size:12.5px;letter-spacing:.34em;color:var(--moon-dim);margin-top:6px;white-space:nowrap}
+.hero .vtitle{position:absolute;left:26px;top:9%;z-index:2;display:flex;flex-direction:row-reverse;gap:20px;align-items:flex-start}
+.hero .vtitle .main{writing-mode:vertical-rl;font-size:42px;font-weight:800;letter-spacing:.2em;line-height:1;white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+.hero .vtitle .sub{writing-mode:vertical-rl;font-size:12.5px;letter-spacing:.34em;color:var(--moon-dim);margin-top:34px;white-space:nowrap}
 .hero .bottom{position:relative;z-index:2;text-align:center;margin-top:40px}
 .hero .open{font-size:12px;letter-spacing:.34em;color:var(--gold-hi);border:1px solid rgba(201,167,106,.5);display:inline-block;padding:9px 22px;background:rgba(201,167,106,.07)}
 .hero .lim{margin-top:20px;font-size:12.5px;letter-spacing:.5em;color:var(--moon-dim)}
