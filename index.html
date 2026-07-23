@@ -45,13 +45,13 @@ h2{font-size:24px;font-weight:800;text-align:center;letter-spacing:.16em;line-he
 
 .band{height:120px;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.10' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%,transparent);mask-image:linear-gradient(180deg,transparent,#000 45%,transparent)}
 
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:13svh;position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
 .hero .moon{position:absolute;top:7%;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#f7f4ea,#d4cebd 55%,#8f8a7a 96%);box-shadow:0 0 120px 20px rgba(240,236,224,.12);animation:moonfloat 9s ease-in-out infinite}
 @keyframes moonfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero .ring{position:absolute;top:calc(7% - 18px);right:-58px;width:256px;height:256px;border:1px solid rgba(201,167,106,.35);border-radius:50%}
-.hero .vtitle{position:relative;z-index:2;writing-mode:vertical-rl;margin:0 0 0 34px;height:56svh;display:flex;gap:22px;align-items:flex-start}
-.hero .vtitle .main{font-size:44px;font-weight:800;letter-spacing:.22em;line-height:1;text-shadow:0 3px 10px rgba(0,0,0,.5)}
-.hero .vtitle .sub{font-size:13px;letter-spacing:.4em;color:var(--moon-dim);margin-top:8px;writing-mode:vertical-rl}
+.hero .vtitle{position:absolute;left:26px;top:9%;z-index:2;writing-mode:vertical-rl;display:flex;gap:20px;align-items:flex-start}
+.hero .vtitle .main{font-size:42px;font-weight:800;letter-spacing:.2em;line-height:1;white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+.hero .vtitle .sub{font-size:12.5px;letter-spacing:.34em;color:var(--moon-dim);margin-top:6px;white-space:nowrap}
 .hero .bottom{position:relative;z-index:2;text-align:center;margin-top:40px}
 .hero .open{font-size:12px;letter-spacing:.34em;color:var(--gold-hi);border:1px solid rgba(201,167,106,.5);display:inline-block;padding:9px 22px;background:rgba(201,167,106,.07)}
 .hero .lim{margin-top:20px;font-size:12.5px;letter-spacing:.5em;color:var(--moon-dim)}
@@ -133,7 +133,7 @@ footer a{color:rgba(178,173,159,.75)}
   <div class="ring"></div><div class="moon"></div>
   <div class="vtitle rv">
     <span class="main gg">白蛇の金糸</span>
-    <span class="main gg" style="font-size:30px;margin-top:14px">極上ルチル</span>
+    <span class="main gg" style="font-size:29px;margin-top:16px">極上ルチル</span>
     <span class="sub">邪念を祓い、流れを結び直す守り石</span>
   </div>
   <div class="bottom rv">
