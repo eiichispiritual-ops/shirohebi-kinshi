@@ -12,7 +12,7 @@
   --ink:#090d18; --ink2:#0d1322; --ink3:#111a2e;
   --moon:#eae7dd; --moon-dim:#b2ad9f;
   --gold:#c9a76a; --gold-hi:#f0dcae; --gold-lo:#8d7040;
-  --shu:#a63f34;
+  --shu:#a63f34; --saffron:#e2953f;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,7 +45,7 @@ h2{font-size:24px;font-weight:800;text-align:center;letter-spacing:.16em;line-he
 
 .band{height:120px;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.10' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%,transparent);mask-image:linear-gradient(180deg,transparent,#000 45%,transparent)}
 
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:13svh;position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(5svh + 170px);position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
 .hero .moon{position:absolute;top:7%;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#f7f4ea,#d4cebd 55%,#8f8a7a 96%);box-shadow:0 0 120px 20px rgba(240,236,224,.12);animation:moonfloat 9s ease-in-out infinite}
 @keyframes moonfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero .ring{position:absolute;top:calc(7% - 18px);right:-58px;width:256px;height:256px;border:1px solid rgba(201,167,106,.35);border-radius:50%}
@@ -124,6 +124,22 @@ details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
 footer{padding:44px 0 60px;text-align:center;font-size:11px;color:rgba(178,173,159,.55);letter-spacing:.1em;line-height:2.4}
 footer a{color:rgba(178,173,159,.75)}
 .legal{font-size:11px;color:rgba(178,173,159,.55);line-height:2.2;margin-top:26px;text-align:center}
+
+/* ── インドの聖地（夜明け前）── */
+.hero .dawn{position:absolute;left:0;right:0;bottom:0;height:52svh;background:linear-gradient(180deg,rgba(58,34,52,0) 0%,rgba(96,54,62,.20) 55%,rgba(226,149,63,.18) 100%);animation:dawnpulse 11s ease-in-out infinite;pointer-events:none}
+@keyframes dawnpulse{0%,100%{opacity:.6}50%{opacity:1}}
+.hero .shrine{position:absolute;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
+.hero .shrine svg{display:block;width:100%;height:clamp(150px,26svh,250px)}
+.win{animation:flicker 4.6s ease-in-out infinite}
+.win2{animation:flicker 4.6s ease-in-out 1.8s infinite}
+@keyframes flicker{0%,100%{opacity:.3}50%{opacity:.95}}
+.hero .from{font-size:11px;letter-spacing:.4em;color:var(--saffron);margin-bottom:12px}
+.scene{margin:34px auto 6px;border:1px solid rgba(201,167,106,.3);background:var(--ink2);padding:8px}
+.scene svg{display:block;width:100%;height:auto}
+.scene .cap{font-size:11.5px;color:var(--moon-dim);text-align:center;letter-spacing:.14em;padding:10px 4px 4px;line-height:2}
+.goldpath{stroke-dasharray:1400;stroke-dashoffset:1400}
+.rv.on .goldpath{animation:golddraw 3.4s ease .5s forwards}
+@keyframes golddraw{to{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -137,9 +153,36 @@ footer a{color:rgba(178,173,159,.75)}
     <span class="sub">邪念を祓い、流れを結び直す守り石</span>
   </div>
   <div class="bottom rv">
+    <p class="from">弁財天さまのふるさと ── インドの聖地より</p>
     <p class="open">８月２５日 ２０:００ ── お迎えの扉が、開きました</p>
     <p class="lim">限 定 3 0 本 ・ 再 入 荷 な し</p>
   </div>
+  <div class="dawn"></div>
+  <div class="shrine" aria-hidden="true"><svg viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="gglow" cx="50%" cy="100%" r="60%">
+        <stop offset="0%" stop-color="#e2953f" stop-opacity=".5"/><stop offset="100%" stop-color="#e2953f" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <path d="M0 196 L140 122 L260 170 L390 98 L520 172 L640 130 L780 180 L900 120 L1050 174 L1200 134 L1200 240 L0 240 Z" fill="#101a30" opacity=".75"/>
+    <g>
+      <path d="M560 186 L560 150 L575 150 L580 118 L596 118 L600 92 L614 92 L617 74 L633 74 L636 92 L650 92 L654 118 L670 118 L675 150 L690 150 L690 186 Z" fill="#070c16"/>
+      <rect x="620" y="60" width="10" height="14" fill="#070c16"/>
+      <circle cx="625" cy="56" r="5" fill="#0a1120" stroke="#c9a76a" stroke-opacity=".55" stroke-width="1"/>
+      <g stroke="#c9a76a" stroke-opacity=".15" stroke-width="1">
+        <line x1="578" y1="150" x2="672" y2="150"/><line x1="583" y1="118" x2="667" y2="118"/><line x1="599" y1="92" x2="651" y2="92"/>
+      </g>
+    </g>
+    <path d="M0 240 L120 178 L230 216 L340 160 L470 218 L560 186 L690 186 L800 216 L930 164 L1060 214 L1200 174 L1200 240 Z" fill="#0a101e"/>
+    <g>
+      <path d="M612 186 L612 162 Q625 150 638 162 L638 186 Z" fill="#e2953f" opacity=".26"/>
+      <ellipse cx="625" cy="188" rx="58" ry="20" fill="url(#gglow)"/>
+      <circle class="win" cx="606" cy="132" r="2.2" fill="#e2953f"/>
+      <circle class="win2" cx="644" cy="132" r="2.2" fill="#e2953f"/>
+      <circle class="win" cx="625" cy="104" r="2.2" fill="#e2953f"/>
+      <path d="M614 190 Q560 206 600 216 Q650 228 560 236" fill="none" stroke="#e5c67c" stroke-width="1.4" stroke-opacity=".55"/>
+    </g>
+  </svg></div>
   <div class="skirt"></div>
 </div>
 
@@ -184,6 +227,36 @@ footer a{color:rgba(178,173,159,.75)}
     <p class="rv">海の向こう、インドに──弁財天さまのふるさとがあります。白い蛇を神様として祀る、山奥の聖地。夜明け前にしか門が開かず、巡礼の人しか入ることを許されない場所です。</p>
     <p class="rv">その聖地を長く守ってこられた御方から、古い言い伝えを聞きました。</p>
     <blockquote class="rv">弁財天さまのお使いの<em>白蛇さま</em>が通った道には、金の糸が残る。その糸は、千年かけて、石の中に閉じ込められる。金の糸を宿した石は──<em>邪念を祓い、切れた流れを、結び直す</em>。</blockquote>
+    <figure class="scene rv" aria-hidden="true">
+      <svg viewBox="0 0 584 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0e1526"/><stop offset="55%" stop-color="#241d33"/><stop offset="100%" stop-color="#53303c"/>
+          </linearGradient>
+          <radialGradient id="gg2" cx="50%" cy="100%" r="55%">
+            <stop offset="0%" stop-color="#e2953f" stop-opacity=".45"/><stop offset="100%" stop-color="#e2953f" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="584" height="320" fill="url(#sky2)"/>
+        <circle cx="470" cy="64" r="24" fill="#efeadb" opacity=".85"/>
+        <circle cx="470" cy="64" r="33" fill="none" stroke="#c9a76a" stroke-opacity=".3"/>
+        <path d="M0 208 L90 150 L170 192 L262 132 L360 196 L444 152 L584 206 L584 320 L0 320 Z" fill="#101a30"/>
+        <path d="M262 232 L262 176 L272 176 L276 152 L288 152 L291 132 L301 132 L304 118 L316 118 L319 132 L329 132 L332 152 L344 152 L348 176 L358 176 L358 232 Z" fill="#080d18"/>
+        <g stroke="#c9a76a" stroke-opacity=".17" stroke-width="1">
+          <line x1="274" y1="176" x2="346" y2="176"/><line x1="288" y1="152" x2="332" y2="152"/><line x1="302" y1="132" x2="318" y2="132"/>
+        </g>
+        <rect x="306" y="106" width="8" height="12" fill="#080d18"/>
+        <circle cx="310" cy="102" r="4" fill="#0a1120" stroke="#c9a76a" stroke-opacity=".6"/>
+        <path d="M0 320 L60 262 L150 296 L240 232 L380 232 L470 288 L584 246 L584 320 Z" fill="#0a101e"/>
+        <path d="M303 232 L303 210 Q310 200 317 210 L317 232 Z" fill="#e2953f" opacity=".3"/>
+        <ellipse cx="310" cy="234" rx="46" ry="15" fill="url(#gg2)"/>
+        <circle class="win" cx="296" cy="164" r="2" fill="#e2953f"/>
+        <circle class="win2" cx="324" cy="164" r="2" fill="#e2953f"/>
+        <path d="M310 234 Q290 252 320 262 Q360 274 300 284 Q240 294 300 306 Q340 314 320 320" fill="none" stroke="#e2953f" stroke-width="6" stroke-opacity=".12" stroke-linecap="round"/>
+        <path class="goldpath" d="M310 234 Q290 252 320 262 Q360 274 300 284 Q240 294 300 306 Q340 314 320 320" fill="none" stroke="#e8cd87" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <figcaption class="cap">夜明け前にしか門が開かない、山奥の聖地。<br>白蛇さまが通った道には──金の糸が、残る。</figcaption>
+    </figure>
     <div class="ph rv"><img src="assets/stone_close.jpg" alt="" onerror="this.parentElement.style.display='none'"><p class="cap">水晶の奥を走る金の糸 ── 白蛇さまの通り道と伝えられる結晶</p></div>
     <p class="rv">水晶の中にまっすぐ伸びる金の針は、<strong>ルチルクォーツ</strong>として、古くから金運・財運・ご縁の石として大切にされてきました。持ち主の流れを整え、必要なご縁や豊かさを引き寄せる象徴とされています。</p>
   </div>
