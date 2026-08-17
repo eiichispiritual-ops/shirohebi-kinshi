@@ -16,7 +16,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--moon);font-family:"Shippori Mincho B1",serif;font-size:16px;line-height:2.15;letter-spacing:.06em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:92px}
+body{background:var(--ink);color:var(--moon);font-family:"Noto Sans JP","Hiragino Sans",YuGothic,sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:92px}
 img{max-width:100%;display:block}
 p{margin-bottom:1.7em}
 p:last-child{margin-bottom:0}
@@ -140,12 +140,32 @@ footer a{color:rgba(178,173,159,.75)}
 .goldpath{stroke-dasharray:1400;stroke-dashoffset:1400}
 .rv.on .goldpath{animation:golddraw 3.4s ease .5s forwards}
 @keyframes golddraw{to{stroke-dashoffset:0}}
+
+/* ---------- 商品写真 ---------- */
+.ph{margin:52px 0;position:relative;overflow:hidden}
+.ph img{width:100%;display:block}
+.ph.sq img{aspect-ratio:1/1;object-fit:cover}
+.ph.wide img{aspect-ratio:16/10;object-fit:cover}
+.ph .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:12.5px;letter-spacing:.2em;color:var(--moon);text-shadow:0 2px 12px rgba(0,0,0,.95)}
+.ph-full{margin:60px -26px;position:relative;overflow:hidden}
+.ph-full img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.ph-full::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink),transparent 22%,transparent 72%,var(--ink));pointer-events:none}
+.ph-full .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 30px;text-align:center;font-family:"Shippori Mincho B1",serif;font-size:clamp(20px,5.6vw,26px);font-weight:700;line-height:1.9;text-shadow:0 3px 20px rgba(0,0,0,.95)}
+.ph.portrait{max-width:270px;margin:46px auto}
+.ph.portrait img{aspect-ratio:3/4;object-fit:cover;object-position:center 20%}
+/* 見出しは明朝を維持 */
+h1,h2,h3,.vtitle,.big,.quote{font-family:"Shippori Mincho B1",serif}
+.hero-photo{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;opacity:.34;transform:scale(1.06);animation:slowZ 30s ease-in-out infinite alternate}
+@keyframes slowZ{from{transform:scale(1.06)}to{transform:scale(1.14)}}
+.hero-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 30%,rgba(9,13,24,.55) 0%,rgba(9,13,24,.88) 60%,var(--ink) 100%)}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-photo" aria-hidden="true"><img src="./img/rutile.jpg" alt=""></div>
   <div class="ring"></div><div class="moon"></div>
   <div class="vtitle rv">
     <span class="main gg">白蛇の金糸</span>
@@ -223,6 +243,10 @@ footer a{color:rgba(178,173,159,.75)}
   <div class="wrap">
     <p class="eyebrow lat rv">THE LEGEND</p>
     <h2 class="rv gg">白蛇さまと、金の糸</h2>
+    <div class="ph-full rv">
+      <img src="./img/rutile_wide.jpg" alt="白蛇の金糸 極上ルチル">
+      <div class="ov">この金の糸が、<br>流れを結び直します。</div>
+    </div>
     <div class="gline"></div>
     <p class="rv">海の向こう、インドに──弁財天さまのふるさとがあります。白い蛇を神様として祀る、山奥の聖地。夜明け前にしか門が開かず、巡礼の人しか入ることを許されない場所です。</p>
     <p class="rv">その聖地を長く守ってこられた御方から、古い言い伝えを聞きました。</p>
@@ -304,6 +328,10 @@ footer a{color:rgba(178,173,159,.75)}
   <div class="wrap">
     <p class="eyebrow lat rv">THE STONE</p>
     <h2 class="rv gg">白蛇の金糸 極上ルチル</h2>
+    <div class="ph sq rv">
+      <img src="./img/rutile.jpg" alt="白蛇の金糸 極上ルチル">
+      <div class="cap">一本ずつ、金の入り方が違います</div>
+    </div>
     <div class="gline"></div>
     <p class="rv" style="text-align:center;font-size:14.5px">【そばに置くだけで、流れが結び直され始める】<br><span style="color:var(--moon-dim);font-size:13px">聖地の言い伝えとともに迎える、1点もののお仕立て</span></p>
     <div class="ph rv"><img src="assets/stone_main.jpg" alt="" onerror="this.parentElement.style.display='none'"><p class="cap">白布と月光のもとで ── あなたの一本</p></div>
@@ -437,6 +465,9 @@ footer a{color:rgba(178,173,159,.75)}
   <div class="wrap">
     <p class="eyebrow lat rv">FROM MIZUKI</p>
     <h2 class="rv gg">最後に</h2>
+    <div class="ph portrait rv">
+      <img src="./img/mizuki.jpg" alt="みづき">
+    </div>
     <div class="gline"></div>
     <p class="rv">この「白蛇の金糸 極上ルチル」は、ただのアクセサリーではありません。</p>
     <p class="rv">3代分の我慢を受け継ぎながら、それでも変わりたいと願うあなたが、<strong>流れをもう一度、自分の手に戻すための石</strong>です。</p>
