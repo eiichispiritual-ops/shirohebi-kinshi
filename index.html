@@ -161,6 +161,29 @@ h1,h2,h3,.vtitle,.big,.quote{font-family:"Shippori Mincho B1",serif}
 .hero-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 30%,rgba(9,13,24,.55) 0%,rgba(9,13,24,.88) 60%,var(--ink) 100%)}
 .ph.tl img{aspect-ratio:3/4;object-fit:cover;object-position:center 12%}
 .ph.tl{max-width:340px;margin-left:auto;margin-right:auto}
+
+/* 購入カード（写真つき） */
+.buycard{
+  margin:44px auto 0;max-width:430px;
+  border:1px solid rgba(201,167,106,.45);
+  background:linear-gradient(180deg,rgba(20,28,48,.72),rgba(9,13,24,.5));
+  overflow:hidden;
+}
+.buycard .thumb{position:relative;overflow:hidden}
+.buycard .thumb img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.buycard .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(9,13,24,.7) 100%)}
+.buycard .thumb .tag{
+  position:absolute;left:12px;top:12px;z-index:2;
+  background:linear-gradient(180deg,#E3C87A,#C9A76A);color:#141008;
+  font-size:11.5px;font-weight:800;letter-spacing:.12em;padding:5px 12px;
+}
+.buycard .body{padding:22px 20px 24px;text-align:center}
+.buycard .nm{font-family:"Shippori Mincho B1",serif;font-size:19px;font-weight:700;color:var(--gold-hi);letter-spacing:.08em;margin-bottom:12px}
+.buycard .pr{font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:600;line-height:1;
+  background:linear-gradient(180deg,#FBEFC4,#D9B45C 48%,#A8813A 64%,#F2DFA6);
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}
+.buycard .pr small{font-family:"Shippori Mincho B1",serif;font-size:16px;margin-left:3px;color:var(--gold-hi);-webkit-text-fill-color:var(--gold-hi)}
+.buycard .ship{font-size:12.5px;color:var(--moon-dim);margin-top:8px;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -410,6 +433,14 @@ h1,h2,h3,.vtitle,.big,.quote{font-family:"Shippori Mincho B1",serif}
     <div class="step rv"><div class="n">3</div><div><h3>お支払い方法を選ぶ</h3><p>クレジットカード・コンビニ決済・銀行振込・分割（ペイディ）など、お選びいただけます。</p></div></div>
     <div class="step rv"><div class="n">4</div><div><h3>注文完了</h3><p>ご注文確定後、一本ずつ浄化を済ませ、1ヶ月以内にお届けします。</p></div></div>
     <div class="pay rv"><b>ご利用可能なお支払い方法</b>クレジットカード ／ コンビニ決済 ／ PayPal ／ 楽天ペイ ／ PayPay ／ あと払い（ペイディ・分割3/6/12回） ／ 銀行振込 ／ キャリア決済 ／ Amazon Pay</div>
+    <div class="buycard rv">
+      <div class="thumb"><span class="tag">限定30本</span><img src="./img/rutile.jpg" alt="白蛇の金糸 極上ルチル"></div>
+      <div class="body">
+        <div class="nm">白蛇の金糸　極上ルチル</div>
+        <div class="pr">79,800<small>円</small></div>
+        <div class="ship">＋送料 1,000円 ／ 分割（ペイディ）もお選びいただけます</div>
+      </div>
+    </div>
     <a class="cta" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a7748da8e3e65cc73c69e37">石を、お迎えする</a>
     <p class="ctasub">安全な決済ページ（STORES）へ移動します</p>
   </div>
@@ -481,6 +512,14 @@ h1,h2,h3,.vtitle,.big,.quote{font-family:"Shippori Mincho B1",serif}
     <p class="rv" style="color:var(--moon-dim);font-size:14.5px">不安なまま、一人にしないからね。</p>
     <p class="rv" style="letter-spacing:.4em;color:var(--gold-hi)">みづき</p>
     <div class="hanko rv">みづき</div>
+    <div class="buycard rv">
+      <div class="thumb"><span class="tag">限定30本</span><img src="./img/rutile.jpg" alt="白蛇の金糸 極上ルチル"></div>
+      <div class="body">
+        <div class="nm">白蛇の金糸　極上ルチル</div>
+        <div class="pr">79,800<small>円</small></div>
+        <div class="ship">＋送料 1,000円 ／ 分割（ペイディ）もお選びいただけます</div>
+      </div>
+    </div>
     <a class="cta rv" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a7748da8e3e65cc73c69e37">石を、お迎えする</a>
     <p class="ctasub rv">限定30本 ── 在庫がなくなり次第、販売終了</p>
     <p class="legal rv">本商品は天然石を用いたお守りであり、効果を保証するものではありません。<br>効果のあらわれ方には個人差があります。<br>お客様のご都合による返品・交換はお受けしておりません。</p>
